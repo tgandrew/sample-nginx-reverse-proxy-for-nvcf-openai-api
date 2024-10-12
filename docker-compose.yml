@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:1-alpine
+    volumes:
+      - "./index.html:/etc/nginx/html/index.html"
+      - "./nginx.conf:/etc/nginx/templates/nginx.conf.template"
+    ports:
+      - "80:80"
+    env_file: .env
